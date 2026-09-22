@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Quản Lý Ngày Công</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="bg-shape shape-1"></div>
+    <div class="bg-shape shape-2"></div>
+    
+    <div class="container admin-container">
+        <div class="glass-card main-card">
+            <div class="header">
+                <h1>Quản Trị Hệ Thống</h1>
+                <p>Cập nhật dữ liệu ngày công sinh viên bằng cách tải lên file Excel (.xlsx).</p>
+            </div>
+            
+            <div class="instruction-box">
+                <strong>Quy ước cột Excel:</strong>
+                <ol>
+                    <li>Mã số sinh viên (Bắt buộc)</li>
+                    <li>Họ và tên (Bắt buộc)</li>
+                    <li>Ban / Bộ phận</li>
+                    <li>Số ngày công (Ví dụ: 8, 10.5)</li>
+                    <li>Ghi chú</li>
+                </ol>
+            </div>
+
+            <form id="uploadForm" class="upload-form">
+                <div class="form-group">
+                    <label for="adminKey">Mã Bí Mật Quản Trị Viên (Admin Secret Key):</label>
+                    <input type="password" id="adminKey" placeholder="Nhập Secret Key..." required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="excelFile">Chọn File Excel (.xlsx):</label>
+                    <div class="file-upload-wrapper">
+                        <input type="file" id="excelFile" accept=".xlsx, .xls" required>
+                    </div>
+                </div>
+                
+                <button type="submit" id="uploadBtn" class="primary-btn">
+                    <span class="btn-text">Tải Lên Hệ Thống</span>
+                </button>
+            </form>
+
+            <div id="loadingUpload" class="hidden">
+                <div class="spinner"></div>
+                <p>Đang xử lý dữ liệu, vui lòng chờ...</p>
+            </div>
+
+            <div id="uploadMessage" class="alert hidden">
+                <span class="icon"></span>
+                <span id="uploadMessageText"></span>
+            </div>
+        </div>
+        <div class="footer-links">
+            <a href="/">← Quay lại trang Tra cứu</a>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tra Cứu Ngày Công Sinh Viên</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="bg-shape shape-1"></div>
+    <div class="bg-shape shape-2"></div>
+    
+    <div class="container">
+        <div class="glass-card main-card">
+            <div class="header">
+                <h1>Tra Cứu Ngày Công</h1>
+                <p>Nhập Mã số sinh viên (MSSV) của bạn để xem số ngày công đã được ghi nhận.</p>
+            </div>
+            
+            <form id="searchForm" class="search-form">
+                <div class="input-group">
+                    <input type="text" id="mssvInput" placeholder="Ví dụ: 20123456" required autocomplete="off">
+                    <button type="submit" id="searchBtn">Tra Cứu</button>
+                </div>
+            </form>
+
+            <div id="loading" class="hidden">
+                <div class="spinner"></div>
+                <p>Đang tìm kiếm...</p>
+            </div>
+
+            <div id="errorAlert" class="alert error hidden">
+                <span class="icon">⚠️</span>
+                <span id="errorMessage"></span>
+            </div>
+
+            <div id="resultCard" class="result-card hidden">
+                <div class="result-header">
+                    <h2 id="resFullName">Nguyễn Văn A</h2>
+                    <span id="resMssv" class="badge">20123456</span>
+                </div>
+                <div class="result-body">
+                    <div class="info-row">
+                        <span class="label">Bộ phận/Ban:</span>
+                        <span id="resDepartment" class="value">Ban Truyền Thông</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="label">Ghi chú:</span>
+                        <span id="resNotes" class="value">Không có</span>
+                    </div>
+                </div>
+                <div class="result-footer">
+                    <div class="work-days-display">
+                        <span class="days-label">Số ngày công</span>
+                        <div class="days-number" id="resWorkDays">10.5</div>
+                    </div>
+                </div>
+                <div class="last-updated">
+                    Cập nhật lần cuối: <span id="resUpdatedAt">--</span>
+                </div>
+            </div>
+        </div>
+        <div class="footer-links">
+            <a href="/admin.html">Dành cho Quản trị viên</a>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
