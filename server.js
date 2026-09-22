@@ -128,7 +128,7 @@ app.post('/api/admin/upload', upload.single('file'), async (req, res) => {
       client.release();
     }
 
-    return res.json({ success: true, message: \`Đã nạp và cập nhật thành công \${successCount} bản ghi.\` });
+    return res.json({ success: true, message: `Đã nạp và cập nhật thành công ${successCount} bản ghi.` });
   } catch (error) {
     console.error('Upload error:', error);
     return res.status(500).json({ success: false, message: "Lỗi khi xử lý file: " + error.message });
@@ -136,5 +136,5 @@ app.post('/api/admin/upload', upload.single('file'), async (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(\`Server is running on port \${PORT}\`);
+  console.log(`Server is running on port ${PORT}`);
 });
